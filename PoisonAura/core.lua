@@ -91,7 +91,7 @@ tooltip:SetScript("OnTooltipSetItem", function(self)
             local text = line:GetText()
 
             for enchantName, texture in pairs(tempEnchants) do
-                if text and string.match(text, enchantName) then
+                if string.match(string.lower(text), string.lower(enchantName)) then
                     self.texture = texture
                     return
                 end
